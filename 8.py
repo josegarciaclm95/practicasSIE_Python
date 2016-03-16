@@ -26,7 +26,7 @@ customer_ids = object.execute_kw(dbname, uid, user_passwd, 'res.partner', 'searc
 customers = object.execute_kw(dbname, uid, user_passwd,'res.partner', 'read', [customer_ids], {'fields':['name']})
 
 # Y los mostramos:
-print "-- Compañias --"
+print "-- Companias --"
 for customer in customers:
     print customer['name']
 

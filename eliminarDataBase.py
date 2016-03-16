@@ -11,7 +11,7 @@ def eliminarBase(conexion):
         raise StandardError("Falta uno nombre o has pasado algo de mas")
     nombre = sys.argv[1]
     if not conexion.db_exist(nombre):
-        raise StandardError("La base de datos %s no existe" % (nombre))
+        raise StandardError("La base de datos {0} no existe".format(nombre))
     confirmacion = raw_input("Esta seguro de que desea eliminar esta base de datos? S/N \n")
     if confirmacion in ('S'):
         conexion.drop('postgres',nombre)

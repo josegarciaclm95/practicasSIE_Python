@@ -12,9 +12,9 @@ def renombrarBase(conexion):
     actual = sys.argv[1]
     futuro = sys.argv[2]
     if not conexion.db_exist(actual):
-        raise StandardError("La base de datos %s no existe" % (actual))
+        raise StandardError("La base de datos {0} no existe".format(actual))
     if conexion.db_exist(futuro):
-        raise StandardError("La base de datos %s ya existe" % (futuro))
+        raise StandardError("La base de datos {0} ya existe".format(futuro))
     conexion.rename('postgres', actual, futuro)
 
 def listarBases(conexion):

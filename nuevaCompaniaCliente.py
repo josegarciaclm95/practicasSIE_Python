@@ -42,5 +42,6 @@ idContacto = object.execute_kw(dbname, uid, user_passwd, 'res.partner', 'create'
                                                                                     'type':'contact'
                                                                                      }])
 print('El id del contacto es {0}'.format(idContacto))
-compania = object.execute_kw(dbname, uid, user_passwd, 'res.partner', 'search_read', [[['is_company', '=' ,True],['id','=',idCompania]]],{'fields':['child_ids']})
-print('Los ids de los contactos de la empresa son \n',compania)
+compania = object.execute_kw(dbname, uid, user_passwd, 'res.partner', 'search_read', [[['is_company', '=' ,True],
+                                                                                       ['id','=',idCompania]]],{'fields':['child_ids']})
+print('Los ids de los contactos de la empresa son \n' + compania[0]['child_ids'])

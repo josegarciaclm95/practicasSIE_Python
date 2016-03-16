@@ -29,4 +29,4 @@ sino = raw_input("Esta seguro de que desea borrar a ese contacto? \n")
 if sino in ('Si','si','S'):
     object.execute_kw(dbname, uid, user_passwd, 'res.partner', 'unlink', [[idContacto[0]['id']]])
     compania = object.execute_kw(dbname, uid, user_passwd, 'res.partner', 'search_read', [[['id','=',idContacto[0]['id']]]])
-    print('Partners con el id' + int(idContacto[0]['id']) + ' : ' + compania)
+    print('Partners con el id' + str(idContacto[0]['id']) + ' : ' + str(compania))
